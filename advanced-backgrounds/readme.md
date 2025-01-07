@@ -5,7 +5,7 @@
 * Requires at least: 6.2
 * Tested up to: 6.7
 * Requires PHP: 7.2
-* Stable tag: 1.12.6
+* Stable tag: 1.12.7
 * License: GPLv2 or later
 * License URI: <http://www.gnu.org/licenses/gpl-2.0.html>
 
@@ -66,6 +66,11 @@ The manual installation method involves downloading our AWB plugin and uploading
 5. Extended WPBakery Page Builder ROW options
 
 ## Changelog
+
+= 1.12.7 - Jan 7, 2025 =
+
+* added setting to prevent custom image sizes registration
+* fixed block layout constrained on frontend
 
 = 1.12.6 - Dec 19, 2024 =
 
