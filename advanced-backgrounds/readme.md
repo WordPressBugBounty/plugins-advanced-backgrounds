@@ -5,7 +5,7 @@
 * Requires at least: 6.2
 * Tested up to: 7.0
 * Requires PHP: 7.2
-* Stable tag: 1.12.9
+* Stable tag: 1.12.10
 * License: GPLv2 or later
 * License URI: <http://www.gnu.org/licenses/gpl-2.0.html>
 
@@ -66,6 +66,10 @@ The manual installation method involves downloading our AWB plugin and uploading
 5. Extended WPBakery Page Builder ROW options
 
 ## Changelog
+
+= 1.12.10 - May 4, 2026 =
+
+* updated Jarallax and Video-Worker libraries to the latest v3
 
 = 1.12.9 - May 4, 2026 =
 
