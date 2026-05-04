@@ -2,7 +2,7 @@
 /**
  * Plugin Name:  Advanced WordPress Backgrounds
  * Description:  Parallax, Video, Images Backgrounds
- * Version:      1.12.8
+ * Version:      1.12.9
  * Plugin URI:   https://wpbackgrounds.com/?utm_source=wordpress.org&utm_medium=readme&utm_campaign=byline
  * Author:       Advanced WordPress Backgrounds Team
  * Author URI:   https://wpbackgrounds.com/?utm_source=wordpress.org&utm_medium=readme&utm_campaign=byline
@@ -104,22 +104,22 @@ class NK_AWB {
     public function register_scripts() {
         wp_register_script( 'jarallax', nk_awb()->plugin_url . 'assets/vendor/jarallax/dist/jarallax.min.js', array(), '2.2.1', true );
         wp_register_script( 'jarallax-video', nk_awb()->plugin_url . 'assets/vendor/jarallax/dist/jarallax-video.min.js', array( 'jarallax' ), '2.2.1', true );
-        wp_register_script( 'awb', nk_awb()->plugin_url . 'assets/awb/awb.min.js', array( 'jarallax', 'jarallax-video' ), '1.12.8', true );
+        wp_register_script( 'awb', nk_awb()->plugin_url . 'assets/awb/awb.min.js', array( 'jarallax', 'jarallax-video' ), '1.12.9', true );
 
         wp_localize_script(
             'awb',
             'AWB',
             array(
-                'version'  => '1.12.8',
+                'version'  => '1.12.9',
                 'settings' => array(
                     'disable_parallax'    => array_keys( AWB_Settings::get_option( 'disable_parallax', 'awb_general', array() ) ? AWB_Settings::get_option( 'disable_parallax', 'awb_general', array() ) : array() ),
                     'disable_video'       => array_keys( AWB_Settings::get_option( 'disable_video', 'awb_general', array() ) ? AWB_Settings::get_option( 'disable_video', 'awb_general', array() ) : array() ),
-                    'full_width_fallback' => ! ( function_exists( 'wp_is_block_theme' ) && wp_is_block_theme() || get_theme_support( 'align-wide' ) ),
+                    'full_width_fallback' => ! ( ( function_exists( 'wp_is_block_theme' ) && wp_is_block_theme() ) || get_theme_support( 'align-wide' ) ),
                 ),
             )
         );
 
-        wp_register_style( 'awb', nk_awb()->plugin_url . 'assets/awb/awb.min.css', array(), '1.12.8' );
+        wp_register_style( 'awb', nk_awb()->plugin_url . 'assets/awb/awb.min.css', array(), '1.12.9' );
     }
 
     /**

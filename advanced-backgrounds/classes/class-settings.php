@@ -34,18 +34,18 @@ class AWB_Settings {
      *
      * @param string $option - option name.
      * @param string $section - section name.
-     * @param string $default - default option value.
+     * @param mixed  $default_value - default option value.
      *
-     * @return bool|string
+     * @return mixed
      */
-    public static function get_option( $option, $section, $default = '' ) {
+    public static function get_option( $option, $section, $default_value = '' ) {
         $options = get_option( $section );
 
         if ( isset( $options[ $option ] ) ) {
             return 'off' === $options[ $option ] ? false : ( 'on' === $options[ $option ] ? true : $options[ $option ] );
         }
 
-        return $default;
+        return $default_value;
     }
 
     /**
@@ -184,8 +184,8 @@ class AWB_Settings {
 
         echo '</div>';
 
-        wp_enqueue_style( 'nk-awb-settings', nk_awb()->plugin_url . 'assets/admin/settings/style.min.css', array(), '1.12.8' );
-        wp_enqueue_script( 'nk-awb-settings', nk_awb()->plugin_url . 'assets/admin/settings/script.min.js', array( 'jquery' ), '1.12.8', true );
+        wp_enqueue_style( 'nk-awb-settings', nk_awb()->plugin_url . 'assets/admin/settings/style.min.css', array(), '1.12.9' );
+        wp_enqueue_script( 'nk-awb-settings', nk_awb()->plugin_url . 'assets/admin/settings/script.min.js', array( 'jquery' ), '1.12.9', true );
     }
 }
 new AWB_Settings();
