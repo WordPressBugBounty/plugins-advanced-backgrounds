@@ -2,7 +2,7 @@
 /**
  * Plugin Name:  Advanced WordPress Backgrounds
  * Description:  Parallax, Video, Images Backgrounds
- * Version:      1.12.10
+ * Version:      1.12.11
  * Plugin URI:   https://wpbackgrounds.com/?utm_source=wordpress.org&utm_medium=readme&utm_campaign=byline
  * Author:       Advanced WordPress Backgrounds Team
  * Author URI:   https://wpbackgrounds.com/?utm_source=wordpress.org&utm_medium=readme&utm_campaign=byline
@@ -102,15 +102,15 @@ class NK_AWB {
      * Register scripts that will be used in the future when portfolio will be printed.
      */
     public function register_scripts() {
-        wp_register_script( 'jarallax', nk_awb()->plugin_url . 'assets/vendor/jarallax/dist/jarallax.min.js', array(), '3.0.0', true );
-        wp_register_script( 'jarallax-video', nk_awb()->plugin_url . 'assets/vendor/jarallax/dist/jarallax-video.min.js', array( 'jarallax' ), '3.0.0', true );
-        wp_register_script( 'awb', nk_awb()->plugin_url . 'assets/awb/awb.min.js', array( 'jarallax', 'jarallax-video' ), '1.12.10', true );
+        wp_register_script( 'jarallax', nk_awb()->plugin_url . 'assets/vendor/jarallax/dist/jarallax.min.js', array(), '3.0.1', true );
+        wp_register_script( 'jarallax-video', nk_awb()->plugin_url . 'assets/vendor/jarallax/dist/jarallax-video.min.js', array( 'jarallax' ), '3.0.1', true );
+        wp_register_script( 'awb', nk_awb()->plugin_url . 'assets/awb/awb.min.js', array( 'jarallax', 'jarallax-video' ), '1.12.11', true );
 
         wp_localize_script(
             'awb',
             'AWB',
             array(
-                'version'  => '1.12.10',
+                'version'  => '1.12.11',
                 'settings' => array(
                     'disable_parallax'    => array_keys( AWB_Settings::get_option( 'disable_parallax', 'awb_general', array() ) ? AWB_Settings::get_option( 'disable_parallax', 'awb_general', array() ) : array() ),
                     'disable_video'       => array_keys( AWB_Settings::get_option( 'disable_video', 'awb_general', array() ) ? AWB_Settings::get_option( 'disable_video', 'awb_general', array() ) : array() ),
@@ -119,7 +119,7 @@ class NK_AWB {
             )
         );
 
-        wp_register_style( 'awb', nk_awb()->plugin_url . 'assets/awb/awb.min.css', array(), '1.12.10' );
+        wp_register_style( 'awb', nk_awb()->plugin_url . 'assets/awb/awb.min.css', array(), '1.12.11' );
     }
 
     /**
